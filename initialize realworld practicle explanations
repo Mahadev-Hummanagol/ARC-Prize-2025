@@ -1,0 +1,12 @@
+multitensor_system (iterable of dims)  -->  Initializer methods
+       |                                        |
+       | make_multitensor(default=...)          V
+       +---------------------------------> initialize_multilinear(...)  -> many (weight,bias) pairs
+                                           initialize_multizeros(...)   -> many zero tensors
+                                           initialize_multiresidual(...) -> pairs-of-linear
+                                           initialize_multiposterior(...) -> means + zeros
+                                           initialize_multidirection_share(...) -> 8x8 directional maps
+                                           symmetrize_*(...)  -> tie/copy tensors across dims
+                                           weights_list <- collects all tensors (flat)
+
+
